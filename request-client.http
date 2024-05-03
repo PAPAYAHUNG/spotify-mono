@@ -1,0 +1,25 @@
+
+GET  http://localhost:3000
+
+###Find songs
+GET http://localhost:3000/songs
+
+###Create songs
+POST http://localhost:3000/songs
+Content-Type: application/json
+
+{
+    "title": "title",
+    "author": ["Alan"],
+    "releasedDate": "2022-09-29",
+    "duration": "04:43"
+}
+
+### Find uniqe song
+GET  http://localhost:3000/songs/3
+
+### Update song
+PUT  http://localhost:3000/songs/3
+
+### Delete song
+DELETE  http://localhost:3000/songs/3
