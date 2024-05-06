@@ -1,7 +1,7 @@
 
 GET  http://localhost:3000
 
-###Find songs
+###Find all songs
 GET http://localhost:3000/songs
 
 ###Create songs
@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "title": "title",
-    "author": ["Alan"],
+    "author": ["Alan", "fdds"],
     "releasedDate": "2022-09-29",
     "duration": "04:43"
 }

@@ -1,6 +1,5 @@
 import {
   IsArray,
-  IsDate,
   IsDateString,
   IsMilitaryTime,
   IsNotEmpty,
@@ -14,6 +13,7 @@ export class CreateSongDto {
 
   @IsNotEmpty()
   @IsArray()
+  @IsString({ each: true })
   readonly author: string[];
 
   @IsDateString()
