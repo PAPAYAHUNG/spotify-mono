@@ -12,7 +12,8 @@ Content-Type: application/json
     "title": "title",
     "author": ["Alan", "fdds"],
     "releasedDate": "2022-09-29",
-    "duration": "04:43"
+    "duration": "04:43",
+    "lyrics": "hehehe"
 }
 
 ### Find uniqe song

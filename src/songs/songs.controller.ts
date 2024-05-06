@@ -9,17 +9,16 @@ import {
   ParseIntPipe,
   Post,
   Put,
-  Scope,
 } from '@nestjs/common';
 import { SongsService } from './songs.service';
 import { CreateSongDto } from './dto/create-song-dto';
 import { DevConfigService } from 'src/provider/dev-config-service';
 
-// @Controller('songs')
-@Controller({
-  path: 'songs',
-  scope: Scope.REQUEST,
-})
+@Controller('songs')
+// @Controller({
+//   path: 'songs',
+//   scope: Scope.REQUEST,
+// })
 export class SongsController {
   constructor(
     private songService: SongsService,
@@ -62,6 +61,7 @@ export class SongsController {
 
   @Post()
   create(@Body() createSongDto: CreateSongDto) {
+    console.log('check outside', createSongDto);
     return this.songService.create(createSongDto);
   }
 

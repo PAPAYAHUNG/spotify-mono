@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { SongsController } from './songs.controller';
 import { SongsService } from './songs.service';
 import { DevConfigService } from 'src/provider/dev-config-service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Song } from './songs.entity';
 
 // const mockFindAll = {
 //   findAll() {
@@ -9,6 +11,7 @@ import { DevConfigService } from 'src/provider/dev-config-service';
 //   },
 // };
 @Module({
+  imports: [TypeOrmModule.forFeature([Song])],
   controllers: [SongsController],
   // providers: [SongsService],
   // providers: [
@@ -25,5 +28,6 @@ import { DevConfigService } from 'src/provider/dev-config-service';
     SongsService,
     DevConfigService,
   ],
+  exports: [TypeOrmModule],
 })
 export class SongsModule {}

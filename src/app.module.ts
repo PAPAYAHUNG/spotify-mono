@@ -4,9 +4,24 @@ import { AppService } from './app.service';
 import { SongsModule } from './songs/songs.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { DevConfigService } from './provider/dev-config-service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { DataSource } from 'typeorm';
+import { Song } from './songs/songs.entity';
 
 @Module({
-  imports: [SongsModule],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'root',
+      password: 'root1234',
+      database: 'nest',
+      entities: [Song],
+      synchronize: true,
+    }),
+    SongsModule,
+  ],
   controllers: [AppController],
   providers: [
     AppService,
@@ -22,6 +37,9 @@ import { DevConfigService } from './provider/dev-config-service';
   exports: [AppService],
 })
 export class AppModule implements NestModule {
+  constructor(private dataSource: DataSource) {
+    console.log('check', dataSource.driver.database);
+  }
   configure(consumer: MiddlewareConsumer) {
     consumer.apply(LoggerMiddleware).forRoutes('songs'); // option no 1
     // consumer.apply(LoggerMiddleware).forRoutes({
