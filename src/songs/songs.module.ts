@@ -28,6 +28,6 @@ import { Song } from './songs.entity';
     SongsService,
     DevConfigService,
   ],
-  exports: [TypeOrmModule],
+  exports: [TypeOrmModule, SongsService],
 })
 export class SongsModule {}

@@ -2,25 +2,70 @@
 GET  http://localhost:3000
 
 ###Find all songs
-GET http://localhost:3000/songs
+GET http://localhost:3000/songs?page=2&limit=2
 
 ###Create songs
 POST http://localhost:3000/songs
 Content-Type: application/json
 
 {
-    "title": "title",
+    "title": "Song 8",
+    "authors": ["Job", "Ben"],
+    "releasedDate": "2022-09-29",
+    "duration": "04:43",
+    "lyrics": "My hearth will go on"
+}
+
+### Find uniqe song
+GET  http://localhost:3000/songs/3
+
+### Find list of songs by Id
+GET  http://localhost:3000/songs/by-ids/1,2,5,6
+
+### Update song
+PUT http://localhost:3000/songs/5
+Content-Type: application/json
+
+{
+    "title": "title change",
     "author": ["Alan", "fdds"],
     "releasedDate": "2022-09-29",
     "duration": "04:43",
     "lyrics": "hehehe"
 }
 
-### Find uniqe song
-GET  http://localhost:3000/songs/3
-
-### Update song
-PUT  http://localhost:3000/songs/3
-
 ### Delete song
-DELETE  http://localhost:3000/songs/3
+DELETE  http://localhost:3000/songs/2
+
+
+### --------------PLAYLIST --------------
+###Find all playlists
+GET http://localhost:3000/playlists
+
+###Create playlists
+POST http://localhost:3000/playlists
+Content-Type: application/json
+
+{
+    "name": "Relax music",
+    "songs": [5, 6],
+    "description": "This playlist is for healing perpose"
+}
+
+### Find uniqe playlist
+GET  http://localhost:3000/playlists/3
+
+### Update playlist
+PUT http://localhost:3000/playlists/5
+Content-Type: application/json
+
+{
+    "title": "title change",
+    "author": ["Alan", "fdds"],
+    "releasedDate": "2022-09-29",
+    "duration": "04:43",
+    "lyrics": "hehehe"
+}
+
+### Delete playlist
+DELETE  http://localhost:3000/playlists/2

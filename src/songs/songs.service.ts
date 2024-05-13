@@ -1,8 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Song } from './songs.entity';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { CreateSongDto } from './dto/create-song-dto';
+import { UpdateDtoSong } from './dto/update-song-dto';
+import {
+  IPaginationOptions,
+  Pagination,
+  paginate,
+} from 'nestjs-typeorm-paginate';
 
 @Injectable()
 // @Injectable({ scope: Scope.REQUEST })
@@ -18,7 +24,7 @@ export class SongsService {
     console.log({ songDTO });
     const song = new Song();
 
-    song.author = songDTO.author;
+    song.authors = songDTO.authors;
     song.title = songDTO.title;
     song.lyrics = songDTO.lyrics;
     song.duration = songDTO.duration;
@@ -27,12 +33,42 @@ export class SongsService {
     console.log('final', song);
     return await this.songRepository.save(song);
   }
-  findAll() {
+
+  findAll(): Promise<Song[]> {
     // throw new Error('Server error');
     // return this.songs;
+
     return this.songRepository.find();
   }
-  findOne(id) {
-    return `type of this is ${typeof id}`;
+
+  findOne(id: number) {
+    console.log({ id });
+    // const foundSong = this.songRepository.findOneById(id);
+    // if (!foundSong) {
+    //   return `User with id ${id} is not found`;
+    // }
+    // return foundSong;
+    return this.songRepository.findOne({ where: { id } });
+  }
+
+  findByIds(ids: number[]): Promise<Song[]> {
+    return this.songRepository.findBy({
+      id: In(ids),
+    });
+  }
+
+  update(id: number, updateSongDto: UpdateDtoSong) {
+    return this.songRepository.update(id, updateSongDto);
+  }
+
+  remove(id: number) {
+    return this.songRepository.delete(id);
+  }
+
+  async paginate(options: IPaginationOptions): Promise<Pagination<Song>> {
+    const queryBuilder = this.songRepository.createQueryBuilder('c');
+    queryBuilder.orderBy('c.id', 'ASC');
+
+    return paginate<Song>(queryBuilder, options);
   }
 }

@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Artist } from 'src/artist/entities/artist.entity';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
+} from 'typeorm';
 
 @Entity()
 export class Song {
@@ -9,7 +16,7 @@ export class Song {
   title: string;
 
   @Column('simple-array') // Represents an array of strings
-  author: string[];
+  authors: string[];
 
   @Column({ type: 'date' })
   releasedDate: Date;
@@ -20,5 +27,7 @@ export class Song {
   @Column({ type: 'text', nullable: true })
   lyrics?: string; // Optional lyrics field
 
-  // You can add other columns or relationships as needed
+  @ManyToMany(() => Artist, (artist) => artist.song, { cascade: true })
+  @JoinTable({ name: 'songs_artist' })
+  artist: Artist[];
 }
