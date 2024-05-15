@@ -2,18 +2,18 @@
 GET  http://localhost:3000
 
 ###Find all songs
-GET http://localhost:3000/songs?page=2&limit=2
+GET http://localhost:3000/songs?page=1&limit=10
 
 ###Create songs
 POST http://localhost:3000/songs
 Content-Type: application/json
 
 {
-    "title": "Song 8",
-    "authors": ["Job", "Ben"],
+    "title": "Song 9",
+    "authors": ["Ken", "Ben"],
     "releasedDate": "2022-09-29",
     "duration": "04:43",
-    "lyrics": "My hearth will go on"
+    "lyrics": "Oh my babe"
 }
 
 ### Find uniqe song
@@ -23,15 +23,11 @@ GET  http://localhost:3000/songs/3
 GET  http://localhost:3000/songs/by-ids/1,2,5,6
 
 ### Update song
-PUT http://localhost:3000/songs/5
+PUT http://localhost:3000/songs/10
 Content-Type: application/json
 
 {
-    "title": "title change",
-    "author": ["Alan", "fdds"],
-    "releasedDate": "2022-09-29",
-    "duration": "04:43",
-    "lyrics": "hehehe"
+    "title": "Song 10"
 }
 
 ### Delete song
@@ -61,7 +57,7 @@ Content-Type: application/json
 
 {
     "title": "title change",
-    "author": ["Alan", "fdds"],
+    "authors": ["Alan", "fdds"],
     "releasedDate": "2022-09-29",
     "duration": "04:43",
     "lyrics": "hehehe"
@@ -69,3 +65,67 @@ Content-Type: application/json
 
 ### Delete playlist
 DELETE  http://localhost:3000/playlists/2
+
+
+
+### --------------User --------------
+###Find all users
+GET http://localhost:3000/user
+
+###Create users
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "username": "Em Pen",
+    "email": "empen@gmail.com",
+    "password": "124234"
+}
+
+### Find uniqe user
+GET  http://localhost:3000/user/3
+
+### Update user
+PUT http://localhost:3000/user/5
+Content-Type: application/json
+
+{
+    "title": "title change",
+    "author": ["Alan", "fdds"],
+    "releasedDate": "2022-09-29",
+    "duration": "04:43",
+    "lyrics": "hehehe"
+}
+
+### Delete user
+DELETE  http://localhost:3000/user/2
+
+
+
+### --------------Artist --------------
+###Find all artist
+GET http://localhost:3000/artist
+
+###Create users
+POST http://localhost:3000/artist
+Content-Type: application/json
+
+{
+    "userId": 1,
+    "songs": [1,2]
+}
+
+### Find uniqe artist
+GET  http://localhost:3000/artist/1
+
+### Update artist
+PUT http://localhost:3000/artist/1
+Content-Type: application/json
+
+{
+    "userId": 5,
+    "songs": [1,2]
+}
+
+### Delete artist
+DELETE  http://localhost:3000/artist/2

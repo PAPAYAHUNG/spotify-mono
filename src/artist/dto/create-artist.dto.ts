@@ -1,9 +1,9 @@
 import {
+  IsArray,
   IsDateString,
   IsNotEmpty,
   IsNumber,
   IsOptional,
-  IsString,
 } from 'class-validator';
 
 export class CreateArtistDto {
@@ -11,11 +11,12 @@ export class CreateArtistDto {
   @IsNotEmpty()
   readonly userId: number;
 
-  @IsString()
-  @IsNotEmpty()
-  readonly title: string;
-
   @IsDateString()
   @IsOptional()
   readonly isJoinedDay: Date;
+
+  @IsArray()
+  @IsOptional()
+  @IsNumber({}, { each: true })
+  readonly songs: number[];
 }
