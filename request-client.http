@@ -37,14 +37,16 @@ DELETE  http://localhost:3000/songs/2
 ### --------------PLAYLIST --------------
 ###Find all playlists
 GET http://localhost:3000/playlists
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
 
 ###Create playlists
 POST http://localhost:3000/playlists
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
 
 {
-    "name": "Relax music",
-    "songs": [5, 6],
+    "name": "Relax music 9",
+    "songs": [],
     "description": "This playlist is for healing perpose"
 }
 
@@ -64,42 +66,41 @@ Content-Type: application/json
 }
 
 ### Delete playlist
-DELETE  http://localhost:3000/playlists/2
+DELETE  http://localhost:3000/playlists/8
 
 
 
 ### --------------User --------------
 ###Find all users
 GET http://localhost:3000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
 
 ###Create users
 POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-    "username": "Em Pen",
-    "email": "empen@gmail.com",
-    "password": "124234"
+    "username": "kikun2",
+    "email": "kikun2@gmail.com",
+    "password": "123456"
 }
 
 ### Find uniqe user
 GET  http://localhost:3000/user/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
 
 ### Update user
-PUT http://localhost:3000/user/5
+PUT http://localhost:3000/user/10
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
 
 {
-    "title": "title change",
-    "author": ["Alan", "fdds"],
-    "releasedDate": "2022-09-29",
-    "duration": "04:43",
-    "lyrics": "hehehe"
+    "roles":["user, admin"]
 }
 
 ### Delete user
-DELETE  http://localhost:3000/user/2
-
+DELETE  http://localhost:3000/user/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
 
 
 ### --------------Artist --------------
@@ -121,11 +122,37 @@ GET  http://localhost:3000/artist/1
 ### Update artist
 PUT http://localhost:3000/artist/1
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
 
 {
-    "userId": 5,
+    "userId": 3,
     "songs": [1,2]
 }
 
 ### Delete artist
 DELETE  http://localhost:3000/artist/2
+
+
+#### ----------- Auth --------
+### Signin
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "username": "kikun",
+    "password": "123456"
+}
+
+### Get profile
+GET http://localhost:3000/auth/profile
+
+###
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciJdLCJpYXQiOjE3MTU4MzU1NDksImV4cCI6MTcxNTgzOTE0OX0.a3rvGcvjL9_jD__scctf7U4XRRq6ASjPKy8JBSJQwtg
+
+
+
+
+
+
+
+

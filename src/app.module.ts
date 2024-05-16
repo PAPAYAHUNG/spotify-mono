@@ -1,11 +1,6 @@
 import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-/* The line `import { SongsModule } from './songs/songs.module';` is importing the `SongsModule` from
-the `songs/songs.module.ts` file in the project. This import statement allows the `AppModule` to use
-and include the functionality provided by the `SongsModule` within its own module. This is a common
-practice in NestJS applications to organize and modularize the codebase by breaking it down into
-smaller, manageable modules. */
 import { SongsModule } from './songs/songs.module';
 import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { DevConfigService } from './provider/dev-config-service';
@@ -18,6 +13,9 @@ import { ArtistModule } from './artist/artist.module';
 import { UserModule } from './user/user.module';
 import { Artist } from './artist/entities/artist.entity';
 import { User } from './user/entities/user.entity';
+import { AuthModule } from './auth/auth.module';
+import { RolesGuard } from './role/role.guard';
+import { AuthGuard } from './auth/auth.guard';
 
 @Module({
   imports: [
@@ -35,10 +33,19 @@ import { User } from './user/entities/user.entity';
     PlaylistsModule,
     ArtistModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [
     AppService,
+    {
+      provide: 'APP_GUARD',
+      useClass: AuthGuard,
+    },
+    {
+      provide: 'APP_GUARD',
+      useClass: RolesGuard,
+    },
     {
       provide: DevConfigService,
       useClass: DevConfigService,

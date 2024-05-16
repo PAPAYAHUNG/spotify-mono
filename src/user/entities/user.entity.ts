@@ -1,6 +1,7 @@
 // user.entity.ts
 
 import { Exclude } from 'class-transformer';
+import { Role } from 'src/role/role.enum';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'users' })
@@ -17,4 +18,7 @@ export class User {
   @Column()
   @Exclude()
   password: string;
+
+  @Column('simple-array')
+  roles: Role[];
 }

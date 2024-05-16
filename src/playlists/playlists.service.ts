@@ -41,6 +41,6 @@ export class PlaylistsService {
   }
 
   remove(id: number) {
-    return `This action removes a #${id} playlist`;
+    return this.playlistRepository.delete(id);
   }
 }
