@@ -4,6 +4,7 @@ import { SongsService } from './songs.service';
 import { DevConfigService } from 'src/provider/dev-config-service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Song } from './songs.entity';
+import { CaslModule } from 'src/casl/casl.module';
 
 // const mockFindAll = {
 //   findAll() {
@@ -11,7 +12,7 @@ import { Song } from './songs.entity';
 //   },
 // };
 @Module({
-  imports: [TypeOrmModule.forFeature([Song])],
+  imports: [TypeOrmModule.forFeature([Song]), CaslModule],
   controllers: [SongsController],
   // providers: [SongsService],
   // providers: [

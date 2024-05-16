@@ -16,6 +16,7 @@ import { User } from './user/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { RolesGuard } from './role/role.guard';
 import { AuthGuard } from './auth/auth.guard';
+import { CaslModule } from './casl/casl.module';
 
 @Module({
   imports: [
@@ -34,6 +35,7 @@ import { AuthGuard } from './auth/auth.guard';
     ArtistModule,
     UserModule,
     AuthModule,
+    CaslModule,
   ],
   controllers: [AppController],
   providers: [
