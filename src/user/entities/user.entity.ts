@@ -21,4 +21,12 @@ export class User {
 
   @Column('simple-array')
   roles: Role[];
+
+  @Column()
+  @Exclude()
+  secretToken: string;
+
+  @Column()
+  @Exclude()
+  is2faEnabled: boolean;
 }
