@@ -1,0 +1,1 @@
+{"version":3,"file":"dev-config-service.js","sourceRoot":"","sources":["../../../src/provider/dev-config-service.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAA4C;AAGrC,IAAM,gBAAgB,GAAtB,MAAM,gBAAgB;IAAtB;QACL,WAAM,GAAG,WAAW,CAAC;IAIvB,CAAC;IAHC,SAAS;QACP,OAAO,IAAI,CAAC,MAAM,CAAC;IACrB,CAAC;CACF,CAAA;AALY,4CAAgB;2BAAhB,gBAAgB;IAD5B,IAAA,mBAAU,GAAE;GACA,gBAAgB,CAK5B"}

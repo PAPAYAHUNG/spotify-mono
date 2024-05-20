@@ -81,22 +81,22 @@ POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-    "username": "bunu",
-    "email": "bunu@gmail.com",
+    "username": "luna",
+    "email": "luna@gmail.com",
     "password": "123456"
 }
 
 ### Find uniqe user
-GET  http://localhost:3000/user/11
+GET  http://localhost:3000/user/12
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 ### Update user
-PUT http://localhost:3000/user/11
+PUT http://localhost:3000/user/12
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
-    "roles":["user","admin"]
+    "roles":["user","admin","super-admin"]
 }
 
 ### Delete user
@@ -112,9 +112,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2Vyb
 ###Create users
 POST http://localhost:3000/artist
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
-    "userId": 1,
+    "userId": 2,
     "songs": [1,2]
 }
 
@@ -177,6 +178,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2Vyb
 {
     "username": "kikun"
 }
+
+### Test env config
+GET http://localhost:3000/auth/test-env
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 
 ###

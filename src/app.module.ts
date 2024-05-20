@@ -6,30 +6,41 @@ import { LoggerMiddleware } from './common/middleware/logger.middleware';
 import { DevConfigService } from './provider/dev-config-service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { Song } from './songs/songs.entity';
 import { PlaylistsModule } from './playlists/playlists.module';
-import { Playlist } from './playlists/entities/playlist.entity';
 import { ArtistModule } from './artist/artist.module';
 import { UserModule } from './user/user.module';
-import { Artist } from './artist/entities/artist.entity';
-import { User } from './user/entities/user.entity';
 import { AuthModule } from './auth/auth.module';
 import { RolesGuard } from './role/role.guard';
 import { AuthGuard } from './auth/auth.guard';
 import { CaslModule } from './casl/casl.module';
+import {
+  // dataSourceOptions,
+  typeOrmAsyncConfig,
+} from './database/database-source';
+import { ConfigModule } from '@nestjs/config';
+import configurations from './config/configurations';
+import { validate } from 'env.validation';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'root1234',
-      database: 'nest',
-      entities: [Song, Playlist, Artist, User],
-      synchronize: true,
+    ConfigModule.forRoot({
+      envFilePath: ['.env.development', '.env.production'],
+      isGlobal: true,
+      load: [configurations],
+      validate,
     }),
+    // TypeOrmModule.forRoot({
+    //   type: 'mysql',
+    //   host: 'localhost',
+    //   port: 3306,
+    //   username: 'root',
+    //   password: 'root1234',
+    //   database: 'nest',
+    //   entities: [Song, Playlist, Artist, User],
+    //   synchronize: true,
+    // }),
+    // TypeOrmModule.forRoot(dataSourceOptions),
+    TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
     SongsModule,
     PlaylistsModule,
     ArtistModule,

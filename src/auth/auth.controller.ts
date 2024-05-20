@@ -47,4 +47,9 @@ export class AuthController {
   disabl2FA(@Body('username') username: string) {
     return this.authService.disable2FA(username);
   }
+
+  @Get('test-env')
+  testEnv() {
+    return this.authService.testEnv();
+  }
 }

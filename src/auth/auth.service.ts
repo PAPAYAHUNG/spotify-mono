@@ -14,6 +14,7 @@ import { Verify2FaDto } from './dto/verify-2fa.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/user/entities/user.entity';
 import { Repository } from 'typeorm';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class AuthService {
@@ -22,6 +23,7 @@ export class AuthService {
     private jwtService: JwtService,
     @InjectRepository(User)
     private userRepository: Repository<User>,
+    private configService: ConfigService,
   ) {}
 
   async signIn(signInDto: SignInDto): Promise<
@@ -123,5 +125,9 @@ export class AuthService {
         is2faEnabled: false,
       },
     );
+  }
+
+  async testEnv() {
+    return this.configService.get('port');
   }
 }
