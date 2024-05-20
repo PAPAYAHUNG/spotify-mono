@@ -22,11 +22,11 @@ export class User {
   @Column('simple-array')
   roles: Role[];
 
-  @Column()
+  @Column({ default: '' })
   @Exclude()
   secretToken: string;
 
-  @Column()
+  @Column({ default: false })
   @Exclude()
   is2faEnabled: boolean;
 }

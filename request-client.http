@@ -3,7 +3,7 @@ GET  http://localhost:3000
 
 ###Find all songs
 GET http://localhost:3000/songs?page=1&limit=10
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 ###Create songs
 POST http://localhost:3000/songs
@@ -38,12 +38,12 @@ DELETE  http://localhost:3000/songs/2
 ### --------------PLAYLIST --------------
 ###Find all playlists
 GET http://localhost:3000/playlists
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 ###Create playlists
 POST http://localhost:3000/playlists
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
     "name": "Relax music 11",
@@ -74,26 +74,26 @@ DELETE  http://localhost:3000/playlists/8
 ### --------------User --------------
 ###Find all users
 GET http://localhost:3000/user
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 ###Create users
 POST http://localhost:3000/user
 Content-Type: application/json
 
 {
-    "username": "kikun2",
-    "email": "kikun2@gmail.com",
+    "username": "bunu",
+    "email": "bunu@gmail.com",
     "password": "123456"
 }
 
 ### Find uniqe user
 GET  http://localhost:3000/user/11
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 ### Update user
 PUT http://localhost:3000/user/11
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
     "roles":["user","admin"]
@@ -101,13 +101,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2Vyb
 
 ### Delete user
 DELETE  http://localhost:3000/user/3
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 
 ### --------------Artist --------------
 ###Find all artist
 GET http://localhost:3000/artist
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 ###Create users
 POST http://localhost:3000/artist
@@ -124,7 +124,7 @@ GET  http://localhost:3000/artist/1
 ### Update artist
 PUT http://localhost:3000/artist/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
     "userId": 3,
@@ -147,12 +147,12 @@ Content-Type: application/json
 
 ### Get profile
 GET http://localhost:3000/auth/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
-### 2FA
+### 2FA generate
 POST  http://localhost:3000/auth/2fa
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
     "username": "kikun"
@@ -162,17 +162,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2Vyb
 ### 2FA verfification
 GET http://localhost:3000/auth/2fa-verify
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
     "username": "kikun",
-    "token": "680468"
+    "token": "298988"
 }
 
 ### Disable 2FA
 DELETE http://localhost:3000/auth/2fa
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
     "username": "kikun"
@@ -180,7 +180,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2Vyb
 
 
 ###
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNTkzMTA4NSwiZXhwIjoxNzE2MTAzODg1fQ.PgxKmonGwy5qrknNuEqCPQsSqpA-U_06pyPtdbX-xF4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 NEVEWPBVKFNGC22NGBIEYNRZEU3SQPRU
 
 
