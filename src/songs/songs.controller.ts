@@ -16,8 +16,11 @@ import { SongsService } from './songs.service';
 import { CreateSongDto } from './dto/create-song-dto';
 import { DevConfigService } from 'src/provider/dev-config-service';
 import { UpdateDtoSong } from './dto/update-song-dto';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 @Controller('songs')
+@ApiBearerAuth()
+@ApiTags('Song')
 // @Controller({
 //   path: 'songs',
 //   scope: Scope.REQUEST,

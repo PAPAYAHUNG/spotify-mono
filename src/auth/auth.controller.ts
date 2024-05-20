@@ -15,14 +15,21 @@ import { AuthGuard } from './auth.guard';
 import { Public } from 'src/utils';
 import { Verify2FaDto } from './dto/verify-2fa.dto';
 import { Generate2FADto } from './dto/generate-2fa.dto';
+import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller('auth')
+@ApiTags('Auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
 
   @Public()
   @HttpCode(HttpStatus.OK)
   @Post('login')
+  @ApiOperation({ summary: 'Login' })
+  @ApiResponse({
+    status: 201,
+    description: 'The record has been successfully created.',
+  })
   signIn(@Body() signInDto: SignInDto) {
     return this.authService.signIn(signInDto);
   }

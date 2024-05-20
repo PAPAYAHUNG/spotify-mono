@@ -12,10 +12,12 @@ import { CreatePlaylistDto } from './dto/create-playlist.dto';
 import { UpdatePlaylistDto } from './dto/update-playlist.dto';
 import { Roles } from 'src/role/role.decorator';
 import { Role } from 'src/role/role.enum';
+import { ApiTags } from '@nestjs/swagger';
 // import { AuthGuard } from 'src/auth/auth.guard';
 // import { RolesGuard } from 'src/role/role.guard';
 
 @Controller('playlists')
+@ApiTags('Playlists')
 export class PlaylistsController {
   constructor(private readonly playlistsService: PlaylistsService) {}
 
