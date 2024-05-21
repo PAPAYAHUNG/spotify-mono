@@ -27,7 +27,7 @@ export class Song {
   @Column({ type: 'text', nullable: true })
   lyrics?: string; // Optional lyrics field
 
-  @ManyToMany(() => Artist, (artist) => artist.song, { cascade: true })
+  @ManyToMany(() => Artist, (artist) => artist.songs, { cascade: true })
   @JoinTable({ name: 'songs_artist' })
   artist: Artist[];
 }

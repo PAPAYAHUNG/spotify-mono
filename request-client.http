@@ -163,7 +163,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2Vyb
 ### 2FA verfification
 GET http://localhost:3000/auth/2fa-verify
 Content-Type: application/json
-# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjExLCJ1c2VybmFtZSI6Imtpa3VuIiwicm9sZXMiOlsidXNlciIsImFkbWluIl0sImlhdCI6MTcxNjEwODk3NiwiZXhwIjoxNzE2MjgxNzc2fQ.KZKfvoy_IfLZT8pAcUtH8cslVHkxm0D_tidiYjUw2xg
 
 {
     "username": "kikun",

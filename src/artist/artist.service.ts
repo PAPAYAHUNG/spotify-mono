@@ -27,7 +27,7 @@ export class ArtistService {
       const songs = await this.songRepository.findBy({
         id: In(createArtistDto.songs),
       });
-      artist.song = songs;
+      artist.songs = songs;
       artist.user = user;
       return this.artistRepository.save(artist);
     } catch (error) {
@@ -66,7 +66,7 @@ export class ArtistService {
         id: In(updateArtistDto.songs),
       })) || [];
 
-    artist.song = songs;
+    artist.songs = songs;
     artist.user = user;
     return this.artistRepository.save(artist);
   }

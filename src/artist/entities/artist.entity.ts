@@ -18,5 +18,5 @@ export class Artist {
   user: User;
 
   @ManyToMany(() => Song, (song) => song.artist)
-  song: Song[];
+  songs: Song[];
 }

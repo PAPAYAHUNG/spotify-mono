@@ -1,0 +1,69 @@
+enum Role {
+  ADMIN
+  USER
+  GUEST
+}
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  gender: String!
+  roles: [Role!]!
+}
+
+type Artist {
+  id: ID!
+  user: User!
+  songs: [Song!]!
+}
+
+type Song {
+  id: ID!
+  title: String!
+  authors: [String!]!
+  releasedDate: String!
+  duration: String!
+  lyrics: String
+  artist: [Artist!]!
+}
+
+type Query {
+  songs: [Song!]!
+  song(id: ID!): Song
+  artists: [Artist!]!
+  artist(id: ID!): Artist
+  users: [User!]!
+  user(id: ID!): User
+}
+
+input CreateSongInput {
+  title: String!
+  authors: [String!]!
+  releasedDate: String!
+  duration: String!
+  lyrics: String
+}
+
+input UpdateSongInput {
+  title: String
+  authors: [String!]
+  releasedDate: String
+  duration: String
+  lyrics: String
+}
+
+type Mutation {
+  createSong(
+    title: String!
+    authors: [String!]!
+    releasedDate: String!
+    duration: String!
+    lyrics: String
+  ): Song!
+}
+
+type Mutation {
+  createSong2(input: CreateSongInput): Song!
+  updateSong(id: ID!, input: UpdateSongInput): Song!
+}

@@ -58,6 +58,7 @@ export class SongsService {
   }
 
   update(id: number, updateSongDto: UpdateDtoSong) {
+    console.log('check', id, updateSongDto);
     return this.songRepository.update(id, updateSongDto);
   }
 

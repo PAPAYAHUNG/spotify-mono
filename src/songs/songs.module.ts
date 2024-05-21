@@ -5,6 +5,7 @@ import { DevConfigService } from 'src/provider/dev-config-service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Song } from './songs.entity';
 import { CaslModule } from 'src/casl/casl.module';
+import { SongsResolver } from './songs.resolver';
 
 // const mockFindAll = {
 //   findAll() {
@@ -28,6 +29,7 @@ import { CaslModule } from 'src/casl/casl.module';
     // },
     SongsService,
     DevConfigService,
+    SongsResolver,
   ],
   exports: [TypeOrmModule, SongsService],
 })

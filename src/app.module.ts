@@ -20,6 +20,9 @@ import {
 import { ConfigModule } from '@nestjs/config';
 import configurations from './config/configurations';
 import { validate } from 'env.validation';
+import { GraphQLModule } from '@nestjs/graphql';
+import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
+import { join } from 'path';
 
 @Module({
   imports: [
@@ -28,6 +31,14 @@ import { validate } from 'env.validation';
       isGlobal: true,
       load: [configurations],
       validate,
+    }),
+    GraphQLModule.forRoot<ApolloDriverConfig>({
+      driver: ApolloDriver,
+      typePaths: ['./**/*.graphql'],
+      definitions: {
+        path: join(process.cwd(), 'src/graphql.ts'),
+        outputAs: 'class',
+      },
     }),
     // TypeOrmModule.forRoot({
     //   type: 'mysql',
